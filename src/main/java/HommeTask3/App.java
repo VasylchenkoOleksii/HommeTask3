@@ -19,7 +19,7 @@ public class App
         Validator validator = vf.getValidator();
 
         Product iphone = new Product("Iphone", new BigDecimal(0.01),new Date(1),new Date(500));
-        Order order = new Order(iphone, 9, "Самый смешной телефон&&&&&&&&&&&&&&&&&&&&&&&&JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF");
+        Order order = new Order(iphone, 5, "Самый смешной телефон");
 
         Set<ConstraintViolation<Order>> validate = validator.validate(order);
 

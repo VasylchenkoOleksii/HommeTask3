@@ -1,5 +1,6 @@
 package HommeTask3;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -7,7 +8,7 @@ import javax.validation.constraints.Size;
  * Created by vasylchenko on 22.05.2017.
  */
 public class Order {
-
+    @Valid
     @NotNull
     private Product product;
 

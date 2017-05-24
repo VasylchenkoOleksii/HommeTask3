@@ -7,11 +7,11 @@ import java.util.Date;
 /**
  * Created by vasylchenko on 22.05.2017.
  */
- @Dates(message = "Дата создания продукта {Product.creationDate} не может быть > или = равна дате сроку годности {Product.expirationDate}")
-public class Product {
+ @Dates(groups = MyGroup.class)
+  public class Product {
     // Имя продукта
     @NotNull (message = "Наименование продукта не моежт быть пустым")
-    @Max(value = 30, message = "Наименование продукта не может быть длиннее {value} символов")
+    @Size(max = 30, message = "Наименование продукта не может быть длиннее {max} символов")
     private String name;
 
     // Цена продукта

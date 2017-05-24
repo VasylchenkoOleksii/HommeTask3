@@ -13,6 +13,9 @@ public class DatesValidator implements ConstraintValidator<Dates,Product> {
     }
     @Override
     public boolean isValid(Product product, ConstraintValidatorContext context) {
+        context.disableDefaultConstraintViolation();
+        context.buildConstraintViolationWithTemplate("Дата создания продукта {Product.creationDate} не может быть > или " +
+                "= равна дате сроку годности {Product.expirationDate}").addConstraintViolation();
         return product.getCreationDate().getTime() < product.getExpirationDate().getTime();
     }
 }
