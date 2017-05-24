@@ -4,6 +4,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+import javax.validation.groups.Default;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Set;
@@ -18,8 +19,12 @@ public class App
         ValidatorFactory vf = Validation.buildDefaultValidatorFactory();
         Validator validator = vf.getValidator();
 
-        Product iphone = new Product("Iphone", new BigDecimal(0.01),new Date(80),new Date(40));
+        Product iphone = new Product("Iphone", new BigDecimal(0.01),new Date(11),new Date(40));
+
+
         Order order = new Order(iphone, 5, "Самый смешной телефон");
+        Set<ConstraintViolation<Order>> violations = validator.validate(order,MyGroup.class);
+        System.out.println(violations);
 
         Set<ConstraintViolation<Order>> validate = validator.validate(order);
 
@@ -29,5 +34,9 @@ public class App
         }
         vf.close();
     }
+
+    private static void assertEquals(int i, int size) {
+    }
+
 
 }
