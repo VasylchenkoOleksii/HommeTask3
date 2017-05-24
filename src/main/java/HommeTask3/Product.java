@@ -10,8 +10,8 @@ import java.util.Date;
  @Dates(groups = MyGroup.class)
   public class Product {
     // Имя продукта
-    @NotNull (message = "Наименование продукта не моежт быть пустым")
-    @Size(max = 30, message = "Наименование продукта не может быть длиннее {max} символов")
+    @NotNull (message = "Наименование продукта не моежт быть пустым", groups = MyGroup.class)
+    @Size(max = 30, message = "Наименование продукта не может быть длиннее {max} символов", groups = MyGroup.class)
     private String name;
 
     // Цена продукта
@@ -20,11 +20,11 @@ import java.util.Date;
 
 
     //Дата создания продукта
-    @Past( message = "Дата должна быть меньше текущей")
+    @Past( message = "Дата должна быть меньше текущей", groups = MyGroup.class)
     private Date creationDate;
 
     //Срок годности
-    @Future(message = "Должна быть дата в будущем")
+    @Future(message = "Должна быть дата в будущем", groups = MyGroup.class)
     private Date expirationDate;
 
 

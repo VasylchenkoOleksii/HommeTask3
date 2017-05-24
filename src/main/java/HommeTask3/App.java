@@ -18,7 +18,7 @@ public class App
         ValidatorFactory vf = Validation.buildDefaultValidatorFactory();
         Validator validator = vf.getValidator();
 
-        Product iphone = new Product("Iphone", new BigDecimal(0.01),new Date(1),new Date(500));
+        Product iphone = new Product("Iphone", new BigDecimal(0.01),new Date(80),new Date(40));
         Order order = new Order(iphone, 5, "Самый смешной телефон");
 
         Set<ConstraintViolation<Order>> validate = validator.validate(order);
