@@ -20,7 +20,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE})
 @Retention(RUNTIME)
 public @interface Dates {
-    String message() default "{HommeTask3.Dates.message}";
+    String message() default "";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
      }
